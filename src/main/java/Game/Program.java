@@ -34,5 +34,6 @@ public class Program {
         }
 
         Game game = new Game(enemiesCount, wallsCount, mapSize, inputProfile);
+
     }
 }
