@@ -38,7 +38,7 @@ public class Game {
     }
 
     public void setWallsCount(Integer wallsCount, Integer enemiesCount) {
-        if (wallsCount < 0 || wallsCount > ((this.mapSize * this.mapSize) - enemiesCount - wallsCount) / 2 ){
+        if (wallsCount < 0 || wallsCount > ((this.mapSize * 4) - 7 - enemiesCount)  / 2 ){
             throw new IllegalParametersException("Illegal Parameters");
         }
         this.wallsCount = wallsCount;
