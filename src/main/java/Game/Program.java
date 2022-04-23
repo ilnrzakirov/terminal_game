@@ -43,11 +43,8 @@ public class Program {
         Downlander downlander = new Downlander(inputProfile);
         Properties properties = downlander.getProperties();
         Map map = new Map(properties);
-        System.out.println(map.getGoalChar());
-        System.out.println(map.getEnemyChar());
-        System.out.println(map.getEmptyChar());
-        System.out.println(map.getWallChar());
-        System.out.println(map.getEnemyColor());
+        MatrixInitializer matrixInitializer = new MatrixInitializer(map, enemiesCount, wallsCount,mapSize);
+        char[][] matrix = matrixInitializer.init();
 
         ColoredPrinter printer = new ColoredPrinter.Builder(1, false).background(Ansi.BColor.valueOf(map.getGoalColor())).build();
         printer.print("shdfhsjf");
