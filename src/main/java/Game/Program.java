@@ -1,5 +1,9 @@
 package Game;
 
+import com.beust.jcommander.JCommander;
+import com.diogonunes.jcdp.color.ColoredPrinter;
+import com.diogonunes.jcdp.color.api.Ansi;
+
 import java.util.Properties;
 
 public class Program {
@@ -38,5 +42,15 @@ public class Program {
         Game game = new Game(enemiesCount, wallsCount, mapSize, inputProfile);
         Downlander downlander = new Downlander(inputProfile);
         Properties properties = downlander.getProperties();
+        Map map = new Map(properties);
+        System.out.println(map.getGoalChar());
+        System.out.println(map.getEnemyChar());
+        System.out.println(map.getEmptyChar());
+        System.out.println(map.getWallChar());
+        System.out.println(map.getEnemyColor());
+
+        ColoredPrinter printer = new ColoredPrinter.Builder(1, false).background(Ansi.BColor.valueOf(map.getGoalColor())).build();
+        printer.print("shdfhsjf");
+
     }
 }

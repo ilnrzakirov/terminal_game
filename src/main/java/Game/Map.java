@@ -8,16 +8,17 @@ public class Map {
 
     private Properties properties;
     private static final String ERROR = "Properties error";
+    private static final String ERROR_PR = "Error properties key";
     private char emptyChar;
     private char playerChar;
     private char wallChar;
     private char goalChar;
     private char enemyChar;
-    private Color enemyColor;
-    private Color emptyColor;
-    private Color playerColor;
-    private Color goalColor;
-    private Color wallColor;
+    private String enemyColor;
+    private String emptyColor;
+    private String playerColor;
+    private String goalColor;
+    private String wallColor;
 
     public Map(Properties properties){
         this.properties = properties;
@@ -27,6 +28,14 @@ public class Map {
     private void validationProperties(Properties properties) {
         setEmptyChar(properties.getProperty("empty.char"));
         setEnemyChar(properties.getProperty("enemy.char"));
+        setGoalChar(properties.getProperty("goal.char"));
+        setPlayerChar(properties.getProperty("player.char"));
+        setEmptyColor(properties.getProperty("empty.color"));
+        setEnemyColor(properties.getProperty("enemy.color"));
+        setGoalColor(properties.getProperty("goal.color"));
+        setWallChar(properties.getProperty("wall.char"));
+        setWallColor(properties.getProperty("wall.color"));
+        setPlayerColor(properties.getProperty("player.color"));
     }
 
     public char getEmptyChar() {
@@ -49,73 +58,168 @@ public class Map {
         return enemyChar;
     }
 
-    public Color getEnemyColor() {
+    public String getEnemyColor() {
         return enemyColor;
     }
 
-    public Color getEmptyColor() {
+    public String getEmptyColor() {
         return emptyColor;
     }
 
-    public Color getPlayerColor() {
+    public String getPlayerColor() {
         return playerColor;
     }
 
-    public Color getGoalColor() {
+    public String getGoalColor() {
         return goalColor;
     }
 
-    public Color getWallColor() {
+    public String getWallColor() {
         return wallColor;
     }
 
     private void setEmptyChar(String emptyLine) {
+        if (emptyLine == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
         if (emptyLine.length() == 1){
             this.emptyChar = emptyLine.charAt(0);
+        } else if (emptyLine.isEmpty()) {
+            this.emptyChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
         }
     }
 
-    private void setPlayerChar(char playerChar) {
-        this.playerChar = playerChar;
+    private void setPlayerChar(String playerLine) {
+        if (playerLine == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (playerLine.length() == 1){
+            this.playerChar = playerLine.charAt(0);
+        } else if (playerLine.isEmpty()){
+            this.playerChar = ' ';
+        } else {
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
     }
 
-    private void setWallChar(char wallChar) {
-        this.wallChar = wallChar;
+    private void setWallChar(String wallLine) {
+        if (wallLine == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (wallLine.length() == 1){
+            this.wallChar = wallLine.charAt(0);
+        } else if (wallLine.isEmpty()){
+            this.wallChar = ' ';
+        } else {
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
     }
 
-    private void setGoalChar(char goalChar) {
-        this.goalChar = goalChar;
+    private void setGoalChar(String goalLIne) {
+        if (goalLIne == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (goalLIne.length() == 1){
+            this.goalChar = goalLIne.charAt(0);
+        } else if (goalLIne.isEmpty()) {
+            this.goalChar = ' ';
+        } else {
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
     }
 
     private void setEnemyChar(String enemyLine) {
+        if (enemyLine == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
         if (enemyLine.length() == 1){
             this.enemyChar = enemyLine.charAt(0);
+        } else if (enemyLine.isEmpty()) {
+            this.enemyChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
         }
     }
 
-    private void setEnemyColor(Color enemyColor) {
-        this.enemyColor = enemyColor;
+    private void setEnemyColor(String color) {
+        if (color == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (color.isEmpty()){
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
+        this.enemyColor = color;
     }
 
-    private void setEmptyColor(Color emptyColor) {
-        this.emptyColor = emptyColor;
+    private void setEmptyColor(String color) {
+        if (color == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (color.isEmpty()){
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
+        this.emptyColor = color;
     }
 
-    private void setPlayerColor(Color playerColor) {
-        this.playerColor = playerColor;
+    private void setPlayerColor(String color) {
+        if (color == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (color.isEmpty()){
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
+        this.playerColor = color;
     }
 
-    private void setGoalColor(Color goalColor) {
-        this.goalColor = goalColor;
+    private void setGoalColor(String color) {
+        if (color == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (color.isEmpty()){
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
+        this.goalColor = color;
     }
 
-    public void setWallColor(Color wallColor) {
-        this.wallColor = wallColor;
+    public void setWallColor(String color) {
+        if (color == null){
+            System.err.println(ERROR_PR);
+            System.exit(-1);
+        }
+
+        if (color.isEmpty()){
+            System.err.println(ERROR);
+            System.exit(-1);
+        }
+        this.wallColor = color;
     }
 }

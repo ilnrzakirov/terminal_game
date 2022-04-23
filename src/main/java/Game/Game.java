@@ -18,7 +18,7 @@ public class Game {
 
     public void setEnemiesCount(Integer enemiesCount) {
         if (enemiesCount <= 0 || enemiesCount > ((this.mapSize * this.mapSize) - enemiesCount - this.wallsCount) / 2){
-            System.err.println(IL_ARGUMENT + "2");
+            System.err.println(IL_ARGUMENT);
             System.exit(-1);
         }
         this.enemiesCount = enemiesCount;
@@ -26,7 +26,7 @@ public class Game {
 
     public void setMapSize(Integer mapSize) {
         if (mapSize < 5){
-            System.err.println(IL_ARGUMENT + "1");
+            System.err.println(IL_ARGUMENT);
             System.exit(-1);
         }
         this.mapSize = mapSize;
@@ -36,14 +36,14 @@ public class Game {
         if (profile.equals("production") || profile.equals("dev")){
             this.profile = profile;
         } else {
-            System.err.println(IL_ARGUMENT + "3");
+            System.err.println(IL_ARGUMENT);
             System.exit(-1);
         }
     }
 
     public void setWallsCount(Integer wallsCount, Integer enemiesCount) {
         if (wallsCount < 0 || wallsCount > ((this.mapSize * this.mapSize) - enemiesCount - wallsCount) / 2 ){
-            System.err.println(IL_ARGUMENT + "4");
+            System.err.println(IL_ARGUMENT);
             System.exit(-1);
         }
         this.wallsCount = wallsCount;
