@@ -1,5 +1,7 @@
 package Game;
 
+import java.util.Properties;
+
 public class Program {
 
     private static final String BAD_ARGUMENT = "Error: bad argument";
@@ -34,6 +36,7 @@ public class Program {
         }
 
         Game game = new Game(enemiesCount, wallsCount, mapSize, inputProfile);
-
+        Downlander downlander = new Downlander(inputProfile);
+        Properties properties = downlander.getProperties();
     }
 }
