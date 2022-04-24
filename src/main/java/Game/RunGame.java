@@ -82,6 +82,16 @@ public class RunGame {
     }
 
     private void printMatrix(ColoredPrinter coloredPrinter) {
+        try {
+            Ansi.BColor.valueOf(map.getEmptyColor());
+            Ansi.BColor.valueOf(map.getPlayerColor());
+            Ansi.BColor.valueOf(map.getGoalColor());
+            Ansi.BColor.valueOf(map.getWallColor());
+            Ansi.BColor.valueOf(map.getEnemyColor());
+        } catch (IllegalArgumentException error) {
+            System.err.println(COLOR_NOT_FOUND);
+            System.exit(-1);
+        }
         for (int y = 1; y < size + 1; y++) {
             for (int x = 1; x < size + 1; x++) {
                 try {
@@ -97,7 +107,7 @@ public class RunGame {
                         coloredPrinter.setBackgroundColor(Ansi.BColor.valueOf(map.getEnemyColor()));
                     }
                 } catch (IllegalArgumentException error) {
-                    System.out.println(COLOR_NOT_FOUND);
+                    System.err.println(COLOR_NOT_FOUND);
                     System.exit(-1);
                 }
                 coloredPrinter.print(matrix[y][x]);

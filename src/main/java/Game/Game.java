@@ -30,11 +30,7 @@ public class Game {
     }
 
     public void setProfile(String profile) {
-        if (profile.equals("production") || profile.equals("dev")){
-            this.profile = profile;
-        } else {
-            throw new IllegalParametersException("Illegal Parameters");
-        }
+        this.profile = profile;
     }
 
     public void setWallsCount(Integer wallsCount, Integer enemiesCount) {

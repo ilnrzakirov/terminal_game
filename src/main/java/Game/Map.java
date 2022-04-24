@@ -3,12 +3,15 @@ package Game;
 
 import java.awt.*;
 import java.util.Properties;
+import java.util.SortedMap;
 
 public class Map {
 
     private Properties properties;
     private static final String ERROR = "Properties error";
     private static final String ERROR_PR = "Error properties key";
+    private static final String ERROR_CHAR = "Error: duplicate characters";
+    private static final Integer SIZE = 5;
     private char emptyChar;
     private char playerChar;
     private char wallChar;
@@ -36,6 +39,28 @@ public class Map {
         setWallChar(properties.getProperty("wall.char"));
         setWallColor(properties.getProperty("wall.color"));
         setPlayerColor(properties.getProperty("player.color"));
+        checkSym();
+    }
+
+    private void checkSym() {
+        char[] chars = new char[SIZE];
+        chars[0] = enemyChar;
+        chars[1] = emptyChar;
+        chars[2] = playerChar;
+        chars[3] = wallChar;
+        chars[4] = goalChar;
+        for (int i = 0; i < SIZE; i++){
+            Integer count = 0;
+            for (int j = 0; j < SIZE; j++){
+                if (chars[i] == chars[j]){
+                    count++;
+                }
+            }
+            if (count > 1){
+                System.err.println(ERROR_CHAR);
+                System.exit(-1);
+            }
+        }
     }
 
     public char getEmptyChar() {
@@ -102,8 +127,6 @@ public class Map {
 
         if (playerLine.length() == 1){
             this.playerChar = playerLine.charAt(0);
-        } else if (playerLine.isEmpty()){
-            this.playerChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
@@ -118,8 +141,6 @@ public class Map {
 
         if (wallLine.length() == 1){
             this.wallChar = wallLine.charAt(0);
-        } else if (wallLine.isEmpty()){
-            this.wallChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
@@ -134,8 +155,6 @@ public class Map {
 
         if (goalLIne.length() == 1){
             this.goalChar = goalLIne.charAt(0);
-        } else if (goalLIne.isEmpty()) {
-            this.goalChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
@@ -150,8 +169,6 @@ public class Map {
 
         if (enemyLine.length() == 1){
             this.enemyChar = enemyLine.charAt(0);
-        } else if (enemyLine.isEmpty()) {
-            this.enemyChar = ' ';
         } else {
             System.err.println(ERROR);
             System.exit(-1);
