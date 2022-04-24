@@ -50,6 +50,7 @@ public class RunGame {
                 System.out.println("haha");
             }
 
+            printMatrix(coloredPrinter);
             chaseLogic.move();
 
             if (profile.equals("dev")) {
