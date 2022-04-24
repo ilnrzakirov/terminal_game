@@ -4,7 +4,6 @@ import ChaseLogic.ChaseLogic;
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.api.Ansi;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.Scanner;
 
 public class RunGame {
