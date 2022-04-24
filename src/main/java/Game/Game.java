@@ -23,7 +23,7 @@ public class Game {
     }
 
     public void setMapSize(Integer mapSize) {
-        if (mapSize < 5){
+        if (mapSize < 5 || mapSize > 100){
             throw new IllegalParametersException("Illegal Parameters");
         }
         this.mapSize = mapSize;
