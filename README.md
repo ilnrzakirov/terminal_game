@@ -3,18 +3,15 @@
 Консольная игра. 
 
 Установка:
-1. Из дериктории ChaseLogic 
+1. Из дериктории TerminalGame 
 ```
 mvn install
 ```
-2. Из директории Game
-```
-mvn clean pckage
-```
+
 Запуск игры:
-1. Из директории Game:
+1. Из директории TerminalGame:
 ```
-java -jar game.jar --enemiesCount=10 --wallsCount=10 --size=30 --profile=production
+java -jar target/game.jar --enemiesCount=10 --wallsCount=10 --size=30 --profile=production
 ```
 Для изменения режима игры:
 ```
