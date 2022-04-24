@@ -9,6 +9,7 @@ public class ChaseLogic {
     private Map map;
     private Integer playerY;
     private Integer playerX;
+    private static final String GAME_OVER = "Game over!";
 
     public ChaseLogic(char[][] matrix, Integer size, Map map) {
         this.matrix = matrix;
@@ -37,7 +38,7 @@ public class ChaseLogic {
             for (int x = 1; x < size + 1; x++) {
                 if (matrix[y][x] == map.getEnemyChar()) {
                     if (checkPlayer(y, x)) {
-                        System.out.println("Game over!");
+                        System.out.println(GAME_OVER);
                         System.exit(-1);
                     }
                     moveEnemy(y, x, temp);

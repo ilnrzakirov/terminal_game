@@ -7,6 +7,8 @@ public class Move {
     private Integer playerY;
     private Integer playerX;
     private Map map;
+    private static final String GAME_OVER = "Game over!";
+    private static final String WIN = "You WIN!";
 
     public Move(char[][] matrix, Integer size, Map map) {
         this.matrix = matrix;
@@ -32,10 +34,10 @@ public class Move {
             matrix[playerY][playerX] = map.getEmptyChar();
             playerY = playerY - 1;
         } else if (matrix[playerY - 1][playerX] == map.getGoalChar()) {
-            System.out.println("You win!");
+            System.out.println(WIN);
             System.exit(0);
         } else if (matrix[playerY - 1][playerX] == map.getEnemyChar()) {
-            System.out.println("Game over!");
+            System.out.println(GAME_OVER);
             System.exit(0);
         }
     }
@@ -46,10 +48,10 @@ public class Move {
             matrix[playerY][playerX] = map.getEmptyChar();
             playerY = playerY + 1;
         } else if (matrix[playerY + 1][playerX] == map.getGoalChar()) {
-            System.out.println("You win!");
+            System.out.println(WIN);
             System.exit(0);
         } else if (matrix[playerY + 1][playerX] == map.getEnemyChar()) {
-            System.out.println("Game over!");
+            System.out.println(GAME_OVER);
             System.exit(0);
         }
     }
@@ -60,10 +62,10 @@ public class Move {
             matrix[playerY][playerX] = map.getEmptyChar();
             playerX = playerX - 1;
         } else if (matrix[playerY][playerX - 1] == map.getGoalChar()) {
-            System.out.println("You win!");
+            System.out.println(WIN);
             System.exit(0);
         } else if (matrix[playerY][playerX - 1] == map.getEnemyChar()) {
-            System.out.println("Game over!");
+            System.out.println(GAME_OVER);
             System.exit(0);
         }
     }
@@ -74,10 +76,10 @@ public class Move {
             matrix[playerY][playerX] = map.getEmptyChar();
             playerX = playerX + 1;
         } else if (matrix[playerY][playerX + 1] == map.getGoalChar()) {
-            System.out.println("You win!");
+            System.out.println(WIN);
             System.exit(0);
         } else if (matrix[playerY][playerX + 1] == map.getEnemyChar()) {
-            System.out.println("Game over!");
+            System.out.println(GAME_OVER);
             System.exit(0);
         }
     }
