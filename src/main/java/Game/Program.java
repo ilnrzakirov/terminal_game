@@ -41,6 +41,8 @@ public class Program {
         Map map = new Map(properties);
         MatrixInitializer matrixInitializer = new MatrixInitializer(map, enemiesCount, wallsCount,mapSize);
         char[][] matrix = matrixInitializer.init();
+        RunGame runGame = new RunGame(matrix, map, mapSize, game.getProfile());
+        runGame.run();
 
 
     }

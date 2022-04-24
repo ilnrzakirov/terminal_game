@@ -64,8 +64,8 @@ public class RunGame {
     }
 
     private void printMatrix(ColoredPrinter coloredPrinter) {
-        for (int y = 0; y < size + 2; y++) {
-            for (int x = 0; x < size + 2; x++) {
+        for (int y = 1; y < size + 1; y++) {
+            for (int x = 1; x < size + 1; x++) {
                 if (matrix[y][x] == map.getEmptyChar()) {
                     coloredPrinter.setBackgroundColor(Ansi.BColor.valueOf(map.getEmptyColor()));
                 } else if (matrix[y][x] == map.getPlayerChar()) {
