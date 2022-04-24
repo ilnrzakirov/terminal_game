@@ -67,8 +67,11 @@ public class RunGame {
                 System.out.println(HELP_TEXT);
             }
 
-            printMatrix(coloredPrinter);
-            System.out.println();
+            if (profile.equals(DEV)){
+                printMatrix(coloredPrinter);
+                System.out.println();
+            };
+
             chaseLogic.move();
             printMatrix(coloredPrinter);
 
