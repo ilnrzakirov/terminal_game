@@ -1,9 +1,5 @@
 package Game;
 
-import com.beust.jcommander.JCommander;
-import com.diogonunes.jcdp.color.ColoredPrinter;
-import com.diogonunes.jcdp.color.api.Ansi;
-
 import java.util.Properties;
 
 public class Program {
@@ -46,8 +42,6 @@ public class Program {
         MatrixInitializer matrixInitializer = new MatrixInitializer(map, enemiesCount, wallsCount,mapSize);
         char[][] matrix = matrixInitializer.init();
 
-        ColoredPrinter printer = new ColoredPrinter.Builder(1, false).background(Ansi.BColor.valueOf(map.getGoalColor())).build();
-        printer.print("shdfhsjf");
 
     }
 }
