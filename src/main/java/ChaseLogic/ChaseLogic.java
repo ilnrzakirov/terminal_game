@@ -31,9 +31,11 @@ public class ChaseLogic {
     public void move() {
         initPlayerCoordinate();
         char[][] temp = new char[size + 2][size + 2];
+
         for (int y = 0; y < size + 2; y++) {
             System.arraycopy(matrix[y], 0, temp[y], 0, size + 2);
         }
+
         for (int y = 1; y < size + 1; y++) {
             for (int x = 1; x < size + 1; x++) {
                 if (matrix[y][x] == map.getEnemyChar()) {
@@ -45,6 +47,7 @@ public class ChaseLogic {
                 }
             }
         }
+
         for (int y = 0; y < size + 2; y++) {
             System.arraycopy(temp[y], 0, matrix[y], 0, size + 2);
         }
@@ -55,6 +58,7 @@ public class ChaseLogic {
                 matrix[y][x - 1] == map.getPlayerChar() || matrix[y][x + 1] == map.getPlayerChar()) {
             return true;
         }
+
         return false;
     }
 
