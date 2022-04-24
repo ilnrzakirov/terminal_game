@@ -65,6 +65,7 @@ public class RunGame {
                 continue;
             } else {
                 System.out.println(HELP_TEXT);
+                continue;
             }
 
             if (profile.equals(DEV)){
